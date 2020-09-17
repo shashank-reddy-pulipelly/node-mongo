@@ -16,13 +16,13 @@ const db=client.db(dbname);
  dboper.insertDocument(db, { name: "Vadonut", description: "Test"},"dishes")
     .then((result) => {
     console.log("Insert Document:\n", result.ops);
-
+    
     return dboper.findDocuments(db, "dishes")
    })
     .then((docs) => {
-        console.log("Found Documents:\n", docs);
+        console.log("Found Documents: \n",docs);
 
-        return dboper.updateDocument(db, { name: "Vadonut" },
+        return dboper.updateDocument(db,{name:"Vadonut"},
             { description: "Updated Test" }, "dishes")
 
     })
